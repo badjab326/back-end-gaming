@@ -3,11 +3,14 @@ import { CollectionConfig } from 'payload/types';
 const Characters: CollectionConfig = {
   slug: 'characters',
   admin: {
-    defaultColumns: ['name', 'author', 'image', 'game', 'bio', 'status'],
+    defaultColumns: ['name', 'author', 'image', 'firstGame', 'allGames', 'playableGames', 'bio', 'status'],
     useAsTitle: 'name',
   },
   access: {
+    create: () => true,
     read: () => true,
+    update: () => true,
+    delete: () => true,
   },
   fields: [
     {
@@ -24,13 +27,30 @@ const Characters: CollectionConfig = {
       type: 'text',
     },
     {
-      name: 'game',
+      name: 'firstGame',
       type: 'relationship',
       relationTo: 'games'
     },
     {
+      name: 'allGames',
+      type: 'relationship',
+      relationTo: 'games',
+      hasMany: true,
+    },
+    {
+      name: 'playableGames',
+      type: 'relationship',
+      relationTo: 'games',
+      hasMany: true,
+    },
+    {
       name: 'bio',
       type: 'richText'
+    },
+    {
+      name: 'pictures',
+      type: 'text',
+      hasMany: true,
     },
     {
       name: 'status',
@@ -45,7 +65,7 @@ const Characters: CollectionConfig = {
           label: 'Published',
         },
       ],
-      defaultValue: 'draft',
+      defaultValue: 'published',
       admin: {
         position: 'sidebar',
       }

@@ -1,5 +1,6 @@
 import express from 'express';
 import payload from 'payload';
+import cors from 'cors';
 
 require('dotenv').config();
 const app = express();
@@ -8,6 +9,9 @@ const app = express();
 app.get('/', (_, res) => {
   res.redirect('/admin');
 });
+
+// Middleware
+app.use(cors())
 
 // Initialize Payload
 payload.init({
