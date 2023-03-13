@@ -27,7 +27,7 @@ const Characters: CollectionConfig = {
       type: 'text',
     },
     {
-      name: 'firstGame',
+      name: 'game',
       type: 'relationship',
       relationTo: 'games'
     },
