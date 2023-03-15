@@ -3,7 +3,7 @@ import { CollectionConfig } from 'payload/types';
 const Characters: CollectionConfig = {
   slug: 'characters',
   admin: {
-    defaultColumns: ['name', 'author', 'image', 'firstGame', 'allGames', 'playableGames', 'bio', 'status'],
+    defaultColumns: ['name', 'author', 'firstGame', 'status'],
     useAsTitle: 'name',
   },
   access: {
@@ -45,12 +45,29 @@ const Characters: CollectionConfig = {
     },
     {
       name: 'bio',
-      type: 'richText'
+      type: 'richText',
     },
     {
-      name: 'pictures',
-      type: 'text',
-      hasMany: true,
+      name: 'pics',
+      type: 'array',
+      fields: [
+        {
+          name: 'pic1',
+          type: 'text',
+        },
+        {
+          name: 'pic2',
+          type: 'text',
+        },
+        {
+          name: 'pic3',
+          type: 'text',
+        },
+        {
+          name: 'pic4',
+          type: 'text',
+        },
+      ]
     },
     {
       name: 'status',

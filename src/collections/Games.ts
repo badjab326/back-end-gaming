@@ -3,7 +3,7 @@ import { CollectionConfig } from 'payload/types';
 const Games: CollectionConfig = {
   slug: 'games',
   admin: {
-    defaultColumns: ['title', 'boxart', 'releaseDate', 'description'],
+    defaultColumns: ['title', 'releaseDate'],
     useAsTitle: 'title',
   },
   access: {
