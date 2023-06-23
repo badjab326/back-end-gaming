@@ -17,3 +17,10 @@ Ensure you are passing all needed environment variables when starting up your co
 The 3 typical env vars will be `MONGODB_URI`, `PAYLOAD_SECRET`, and `PAYLOAD_CONFIG_PATH`
 
 `docker run --env-file .env -p 3000:3000 my-tag`
+
+## Getting Started
+
+[Check out the admin panel here!](https://back-end-gaming-production.up.railway.app/admin)
+(Note: Account access must be requested before use.)
+
+[Check out the live frontend here!](https://black-in-gaming-production.up.railway.app/dashboard)
