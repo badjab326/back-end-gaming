@@ -1,4 +1,4 @@
-# back-end-gaming
+# BackEndGaming
 
 This project was created using create-payload-app, and serves as the backend and admin panel for the BlackInGaming app found here: https://github.com/badjab326/black-in-gaming
 
